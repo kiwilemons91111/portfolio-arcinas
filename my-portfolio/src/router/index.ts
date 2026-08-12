@@ -9,6 +9,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: { title: 'Rovic Ian L. Arcinas | Full-Stack Engineer' }
     },
   ],
 })
