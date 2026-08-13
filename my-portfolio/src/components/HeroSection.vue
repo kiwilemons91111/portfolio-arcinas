@@ -36,7 +36,84 @@ const systemBadges = computed(() => [
         <span class="text-[#c9d1d9]">hero.init</span>
       </div>
 
-      <div class="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+      <!-- Grid columns flipped on desktop: left column (0.85fr) for Profile Image, right column (1.15fr) for Bio Info -->
+      <div class="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+        
+        <!-- 1. PROFILE PICTURE BLOCK (Renders FIRST/TOP on Mobile, LEFT on Desktop) -->
+        <div class="relative mx-auto w-full max-w-sm lg:max-w-none">
+          <div
+            class="absolute -top-4 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap border border-emerald-500/40 bg-[#0d1117] px-4 py-1.5 font-mono text-[11px] text-emerald-400 status-pulse"
+          >
+            <span class="mr-2 inline-flex items-center gap-1.5">
+              <span class="relative flex h-2 w-2">
+                <span
+                  class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+                />
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+              </span>
+              Online
+            </span>
+            <span class="text-[#484f58]">/</span>
+            Ready for Contract
+          </div>
+
+          <div class="relative border border-[#30363d] bg-[#161b22]/80 p-5 pt-8 backdrop-blur-sm">
+            <span
+              class="pointer-events-none absolute -left-px -top-px z-10 font-mono text-sm leading-none text-[#58a6ff]"
+              aria-hidden="true"
+            >
+              +
+            </span>
+            <span
+              class="pointer-events-none absolute -right-px -top-px z-10 font-mono text-sm leading-none text-[#58a6ff]"
+              aria-hidden="true"
+            >
+              +
+            </span>
+            <span
+              class="pointer-events-none absolute -bottom-px -left-px z-10 font-mono text-sm leading-none text-[#58a6ff]"
+              aria-hidden="true"
+            >
+              +
+            </span>
+            <span
+              class="pointer-events-none absolute -bottom-px -right-px z-10 font-mono text-sm leading-none text-[#58a6ff]"
+              aria-hidden="true"
+            >
+              +
+            </span>
+
+            <div class="relative overflow-hidden border border-[#30363d] bg-[#0d1117]">
+              <img
+                :src="profileImage"
+                :alt="`${portfolio.personal.name} profile photo`"
+                class="aspect-square w-full object-cover object-[center_25%] grayscale-[15%] contrast-[1.05]"
+              />
+
+              <div
+                class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_62%,rgba(13,17,23,0.85)_100%)]"
+                aria-hidden="true"
+              />
+            </div>
+
+            <div class="mt-4 border-t border-[#30363d] pt-4">
+              <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-wider">
+                <span class="text-[#484f58]">frame::profile</span>
+                <span class="text-emerald-400">● active</span>
+              </div>
+              <div class="mt-2 flex items-center justify-between font-mono text-xs">
+                <span class="text-[#8b949e]">dev_id</span>
+                <span class="text-[#c9d1d9]">RIV-001</span>
+              </div>
+              <div class="mt-1 flex items-center justify-between font-mono text-xs">
+                <span class="text-[#8b949e]">mode</span>
+                <span class="text-emerald-400">contract_ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. INFORMATION / BIO CARD (Renders SECOND/BELOW on Mobile, RIGHT on Desktop) -->
         <div class="border border-[#30363d] bg-[#161b22]/80 p-6 backdrop-blur-sm sm:p-8">
           <div class="mb-5 flex flex-wrap gap-2">
             <span
@@ -117,78 +194,6 @@ const systemBadges = computed(() => [
           </p>
         </div>
 
-        <div class="relative mx-auto w-full max-w-sm lg:max-w-none">
-          <div
-            class="absolute -top-4 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap border border-emerald-500/40 bg-[#0d1117] px-4 py-1.5 font-mono text-[11px] text-emerald-400 status-pulse"
-          >
-            <span class="mr-2 inline-flex items-center gap-1.5">
-              <span class="relative flex h-2 w-2">
-                <span
-                  class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
-                />
-                <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-              </span>
-              Online
-            </span>
-            <span class="text-[#484f58]">/</span>
-            Ready for Contract
-          </div>
-
-          <div class="relative border border-[#30363d] bg-[#161b22]/80 p-5 pt-8 backdrop-blur-sm">
-            <span
-              class="pointer-events-none absolute -left-px -top-px z-10 font-mono text-sm leading-none text-[#58a6ff]"
-              aria-hidden="true"
-            >
-              +
-            </span>
-            <span
-              class="pointer-events-none absolute -right-px -top-px z-10 font-mono text-sm leading-none text-[#58a6ff]"
-              aria-hidden="true"
-            >
-              +
-            </span>
-            <span
-              class="pointer-events-none absolute -bottom-px -left-px z-10 font-mono text-sm leading-none text-[#58a6ff]"
-              aria-hidden="true"
-            >
-              +
-            </span>
-            <span
-              class="pointer-events-none absolute -bottom-px -right-px z-10 font-mono text-sm leading-none text-[#58a6ff]"
-              aria-hidden="true"
-            >
-              +
-            </span>
-
-            <div class="relative overflow-hidden border border-[#30363d] bg-[#0d1117]">
-              <img
-                :src="profileImage"
-                :alt="`${portfolio.personal.name} profile photo`"
-                class="aspect-square w-full object-cover object-[center_25%] grayscale-[15%] contrast-[1.05]"
-              />
-
-              <div
-                class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_62%,rgba(13,17,23,0.85)_100%)]"
-                aria-hidden="true"
-              />
-            </div>
-
-            <div class="mt-4 border-t border-[#30363d] pt-4">
-              <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-wider">
-                <span class="text-[#484f58]">frame::profile</span>
-                <span class="text-emerald-400">● active</span>
-              </div>
-              <div class="mt-2 flex items-center justify-between font-mono text-xs">
-                <span class="text-[#8b949e]">dev_id</span>
-                <span class="text-[#c9d1d9]">RIV-001</span>
-              </div>
-              <div class="mt-1 flex items-center justify-between font-mono text-xs">
-                <span class="text-[#8b949e]">mode</span>
-                <span class="text-emerald-400">contract_ready</span>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
