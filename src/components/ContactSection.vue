@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 const email = 'rodelatboat@gmail.com'
-const phone = '+63 900 000 0000' // Update with your preferred phone number
+const phone = '+63 976 500 4461' 
 const copiedTarget = ref<string | null>(null)
 
 const copyToClipboard = (text: string, label: string) => {
