@@ -107,7 +107,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="relative bg-[#0d1117] text-[#c9d1d9]">
+  <section id="projects" class="relative text-[#c9d1d9]">
     <div class="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-24">
       <div
         class="mb-8 inline-flex items-center gap-2 border border-[#30363d] bg-[#161b22] px-3 py-1.5 font-mono text-xs text-[#8b949e]"

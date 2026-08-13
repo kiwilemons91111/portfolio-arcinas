@@ -22,7 +22,7 @@ const defaultEducation: EducationItem[] = [
     degree: 'Bachelor of Science in Information Technology (BSIT)',
     institution: 'De La Salle University - Dasmariñas',
     location: 'Dasmariñas, Cavite',
-    period: '2020 — 2024',
+    period: '2022 — 2026',
     description: 'Specialized in Software Engineering, Web Application Development, Database Management Systems, and Enterprise Architecture.',
     highlights: [
       'Successfully developed and defended Provibase (GIS Cemetery Management System) as Capstone Project',

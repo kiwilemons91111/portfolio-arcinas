@@ -41,6 +41,7 @@ const categories = props.skillGroups && props.skillGroups.length > 0 ? props.ski
 </script>
 
 <template>
+    <section id="skills" class="relative text-[#c9d1d9]">
   <div id="skills" class="py-16 px-4 max-w-6xl mx-auto">
     <!-- Section Header -->
     <div class="mb-10 text-center md:text-left">
@@ -95,4 +96,5 @@ const categories = props.skillGroups && props.skillGroups.length > 0 ? props.ski
       </div>
     </div>
   </div>
+</section>
 </template>

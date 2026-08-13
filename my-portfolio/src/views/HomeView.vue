@@ -4,6 +4,7 @@ import ProjectsSection from '@/components/ProjectsSection.vue'
 import SkillsSection from '@/components/SkillsSection.vue'
 import ExperienceSection from '@/components/ExperienceSection.vue'
 import EducationSection from '@/components/EducationSection.vue'
+import ContactSection from '@/components/ContactSection.vue'
 </script>
 
 <template>
@@ -32,6 +33,11 @@ import EducationSection from '@/components/EducationSection.vue'
     <!-- 5. Education: WITH Grid Pattern BG -->
     <section class="bg-grid-pattern">
       <EducationSection />
+    </section>
+
+    <!-- 6. Contact: Solid Dark BG (No Grid) -->
+    <section class="bg-[#161b22]">
+      <ContactSection />
     </section>
 
   </main>

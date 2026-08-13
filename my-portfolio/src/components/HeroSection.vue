@@ -14,7 +14,7 @@ const systemBadges = computed(() => [
 </script>
 
 <template>
-  <section class="relative overflow-hidden bg-[#0d1117] text-[#c9d1d9]">
+  <section class="relative text-[#c9d1d9]">
     <div
       class="pointer-events-none absolute inset-0 opacity-[0.35]"
       aria-hidden="true"
