@@ -6,7 +6,6 @@ export function useScrollObserve() {
   const initObserver = () => {
     const targets = document.querySelectorAll('.reveal-on-scroll')
 
-    // Safety fallback: if no elements found or observer unsupported, reveal immediately
     if (!('IntersectionObserver' in window) || targets.length === 0) {
       targets.forEach((el) => el.classList.add('is-visible'))
       return
@@ -16,27 +15,23 @@ export function useScrollObserve() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // Fade in when scrolled into view
             entry.target.classList.add('is-visible')
-            observer.unobserve(entry.target) // Trigger once on scroll down
+          } else {
+            // Reset class when scrolled out of view so it re-animates next time
+            entry.target.classList.remove('is-visible')
           }
         })
       },
       { threshold: 0.05 }
     )
 
-    targets.forEach((target) => {
-      // Immediate check: If element is inside initial viewport, reveal right away
-      const rect = target.getBoundingClientRect()
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        target.classList.add('is-visible')
-      }
-      observer.observe(target)
-    })
+    targets.forEach((target) => observer.observe(target))
   }
 
   onMounted(async () => {
     await nextTick()
-    // 50ms delay gives the production DOM enough time to fully mount component templates
+    // Small timeout ensures production bundles finish mounting template DOM nodes
     setTimeout(initObserver, 50)
   })
 
