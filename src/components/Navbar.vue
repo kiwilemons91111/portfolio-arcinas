@@ -64,32 +64,8 @@ const scrollToSection = (href: string) => {
         </div>
       </div>
 
-      <!-- Navigation & FX Toggle -->
+      <!-- Navigation  -->
       <div class="flex items-center gap-4">
-        
-        <!-- ON / OFF FX Toggle Button -->
-        <button
-          @click="emit('toggle-fx')"
-          type="button"
-          class="flex items-center gap-2 rounded border px-2.5 py-1 font-mono text-xs transition-all active:scale-95"
-          :class="
-            isFxActive
-              ? 'border-emerald-500/50 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20'
-              : 'border-[#30363d] bg-[#161b22] text-[#8b949e] hover:border-zinc-500 hover:text-[#c9d1d9]'
-          "
-        >
-          <span class="relative flex h-2 w-2">
-            <span
-              v-if="isFxActive"
-              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
-            ></span>
-            <span
-              class="relative inline-flex h-2 w-2 rounded-full"
-              :class="isFxActive ? 'bg-emerald-500' : 'bg-zinc-600'"
-            ></span>
-          </span>
-          <span>FX: {{ isFxActive ? 'ON' : 'OFF' }}</span>
-        </button>
 
         <!-- Desktop Links -->
         <nav class="hidden md:flex items-center gap-6 font-mono text-xs">

@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import { RouterView } from 'vue-router'
 import Navbar from '@/components/Navbar.vue'
-import RippleBackground from '@/components/RippleBackground.vue'
 import BackToTop from '@/components/BackToTop.vue'
 import { useScrollObserve } from '@/composables/useScrollObserve'
 
