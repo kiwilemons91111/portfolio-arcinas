@@ -25,3 +25,18 @@
 html {
   zoom: 110%;
 }
+
+/* Base hidden state */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(16px); /* Very small offset so it doesn't jump aggressively */
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Revealed state */
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
