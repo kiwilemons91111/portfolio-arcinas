@@ -1,38 +1,23 @@
-import { onMounted, onUnmounted, nextTick } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 
 export function useScrollObserve() {
   let observer: IntersectionObserver
 
-  onMounted(async () => {
-    await nextTick()
-
-    const targets = document.querySelectorAll('.reveal-on-scroll')
-
+  onMounted(() => {
     observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible')
-          } else {
-            // Only toggle off if the element is below or far above the viewport
-            entry.target.classList.remove('is-visible')
           }
         })
       },
-      { 
-        threshold: 0.05, // Lower threshold triggers the instant an edge touches the screen
-        rootMargin: '50px 0px 50px 0px' // Pre-triggers slightly before scrolling into view
-      }
+      { threshold: 0.15 } // Triggers when 15% of the element is visible
     )
 
-    targets.forEach((target) => {
-      // Instant safety check: If it's already in the viewport on page load, reveal immediately
-      const rect = target.getBoundingClientRect()
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        target.classList.add('is-visible')
-      }
-      observer.observe(target)
-    })
+    // Target all elements with the 'reveal-on-scroll' class
+    const targets = document.querySelectorAll('.reveal-on-scroll')
+    targets.forEach((target) => observer.observe(target))
   })
 
   onUnmounted(() => {
