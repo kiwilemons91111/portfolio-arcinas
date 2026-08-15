@@ -29,14 +29,13 @@ html {
 /* Base hidden state */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(16px); /* Very small offset so it doesn't jump aggressively */
-  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(12px);
+  /* Snappy 0.4s transition removes lagging delays */
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
   will-change: opacity, transform;
 }
 
-/* Revealed state */
 .reveal-on-scroll.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }

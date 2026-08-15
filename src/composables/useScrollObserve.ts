@@ -6,23 +6,33 @@ export function useScrollObserve() {
   onMounted(async () => {
     await nextTick()
 
+    const targets = document.querySelectorAll('.reveal-on-scroll')
+
     observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Add class when element enters viewport (scroll down or up)
             entry.target.classList.add('is-visible')
           } else {
-            // Remove class when element exits viewport
+            // Only toggle off if the element is below or far above the viewport
             entry.target.classList.remove('is-visible')
           }
         })
       },
-      { threshold: 0.1 } // Triggers when 10% of the section is in view
+      { 
+        threshold: 0.05, // Lower threshold triggers the instant an edge touches the screen
+        rootMargin: '50px 0px 50px 0px' // Pre-triggers slightly before scrolling into view
+      }
     )
 
-    const targets = document.querySelectorAll('.reveal-on-scroll')
-    targets.forEach((target) => observer.observe(target))
+    targets.forEach((target) => {
+      // Instant safety check: If it's already in the viewport on page load, reveal immediately
+      const rect = target.getBoundingClientRect()
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        target.classList.add('is-visible')
+      }
+      observer.observe(target)
+    })
   })
 
   onUnmounted(() => {
