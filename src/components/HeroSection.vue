@@ -35,11 +35,7 @@ const systemBadges = computed(() => [
         <span class="text-[#484f58]">/</span>
         <span class="text-[#c9d1d9]">hero.init</span>
       </div>
-
-      <!-- Grid columns flipped on desktop: left column (0.85fr) for Profile Image, right column (1.15fr) for Bio Info -->
       <div class="grid items-center gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
-        
-        <!-- 1. PROFILE PICTURE BLOCK (Renders FIRST/TOP on Mobile, LEFT on Desktop) -->
         <div class="relative mx-auto w-full max-w-sm lg:max-w-none">
           <div
             class="absolute -top-4 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap border border-emerald-500/40 bg-[#0d1117] px-4 py-1.5 font-mono text-[11px] text-emerald-400 status-pulse"
@@ -112,8 +108,6 @@ const systemBadges = computed(() => [
             </div>
           </div>
         </div>
-
-        <!-- 2. INFORMATION / BIO CARD (Renders SECOND/BELOW on Mobile, RIGHT on Desktop) -->
         <div class="border border-[#30363d] bg-[#161b22]/80 p-6 backdrop-blur-sm sm:p-8">
           <div class="mb-5 flex flex-wrap gap-2">
             <span

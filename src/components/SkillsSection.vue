@@ -43,7 +43,6 @@ const categories = props.skillGroups && props.skillGroups.length > 0 ? props.ski
 <template>
     <section id="skills" class="relative text-[#c9d1d9]">
   <div id="skills" class="py-16 px-4 max-w-6xl mx-auto">
-    <!-- Section Header -->
     <div class="mb-10 text-center md:text-left">
       <h2 class="text-3xl font-bold tracking-tight text-white flex items-center gap-3 justify-center md:justify-start">
         <span class="font-mono text-emerald-400 text-2xl">&lt;/&gt;</span>
@@ -53,15 +52,12 @@ const categories = props.skillGroups && props.skillGroups.length > 0 ? props.ski
         // Grouped tech stack & development capabilities
       </p>
     </div>
-
-    <!-- Code Block Grid Panels -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
         v-for="category in categories"
         :key="category.title"
         class="rounded-xl border border-[#30363d] bg-[#161b22] shadow-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-zinc-500 hover:shadow-2xl hover:shadow-emerald-500/5"
       >
-        <!-- Code Window Header Bar -->
         <div class="flex items-center justify-between border-b border-[#30363d] bg-[#0d1117] px-4 py-2.5">
           <div class="flex items-center gap-1.5">
             <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
@@ -72,16 +68,12 @@ const categories = props.skillGroups && props.skillGroups.length > 0 ? props.ski
             {{ category.fileIdentifier }}
           </span>
         </div>
-
-        <!-- Panel Body -->
         <div class="p-5 flex-1 flex flex-col justify-between bg-[#161b22]">
           <div>
             <h3 class="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-4 pb-2 border-b border-[#30363d] flex items-center justify-between">
               <span>// {{ category.title }}</span>
               <span class="text-zinc-500 text-[10px]">[{{ category.skills.length }} items]</span>
             </h3>
-
-            <!-- Skills Tag Cloud -->
             <div class="flex flex-wrap gap-2">
               <span
                 v-for="skill in category.skills"

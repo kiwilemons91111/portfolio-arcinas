@@ -44,7 +44,6 @@ const items = props.educationList && props.educationList.length > 0 ? props.educ
 
 <template>
   <section id="education" class="py-12 px-4 max-w-5xl mx-auto">
-    <!-- Section Header -->
     <div class="mb-10 text-center md:text-left">
       <h2 class="text-3xl font-bold tracking-tight text-white flex items-center gap-3 justify-center md:justify-start">
         <span class="font-mono text-cyan-400 text-xl">git log --education</span>
@@ -54,26 +53,15 @@ const items = props.educationList && props.educationList.length > 0 ? props.educ
         // Academic credentials & continuous learning
       </p>
     </div>
-
-    <!-- Git Commit-Style Vertical Timeline -->
     <div class="relative pl-6 sm:pl-10 border-l-2 border-zinc-800 space-y-10">
-      <div
-        v-for="item in items"
-        :key="item.id"
-        class="relative group"
-      >
-        <!-- Git Node Bullet Point -->
+      <div v-for="item in items" :key="item.id" class="relative group">
         <div class="absolute -left-[31px] sm:-left-[47px] top-1 flex items-center justify-center">
           <span class="relative flex h-5 w-5 items-center justify-center">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-20 group-hover:opacity-60 transition-opacity"></span>
             <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-zinc-950 border-2 border-cyan-400 group-hover:bg-cyan-400 transition-colors duration-300"></span>
           </span>
         </div>
-
-        <!-- Content Card -->
         <div class="rounded-xl border border-zinc-800 bg-zinc-950/80 p-6 shadow-xl transition-all duration-300 hover:border-zinc-700 hover:shadow-2xl hover:shadow-cyan-500/5">
-          
-          <!-- Card Header (Commit Hash & Period) -->
           <div class="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-800/80 pb-3 mb-4 font-mono text-xs">
             <div class="flex items-center gap-3">
               <span class="text-cyan-400 font-semibold flex items-center gap-1">
@@ -91,8 +79,6 @@ const items = props.educationList && props.educationList.length > 0 ? props.educ
               DEGREE
             </span>
           </div>
-
-          <!-- Degree & Institution -->
           <div class="space-y-1 mb-3">
             <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
               {{ item.degree }}
@@ -103,21 +89,15 @@ const items = props.educationList && props.educationList.length > 0 ? props.educ
               <span class="text-zinc-500">{{ item.location }}</span>
             </div>
           </div>
-
-          <!-- Description -->
           <p class="text-sm text-zinc-300 mb-4 leading-relaxed">
             {{ item.description }}
           </p>
-
-          <!-- Highlights List -->
           <ul class="space-y-1.5 mb-4 text-xs text-zinc-400 font-mono">
             <li v-for="(highlight, idx) in item.highlights" :key="idx" class="flex items-start gap-2">
               <span class="text-cyan-400 select-none">+</span>
               <span>{{ highlight }}</span>
             </li>
           </ul>
-
-          <!-- Relevant Coursework Tags -->
           <div v-if="item.courses && item.courses.length > 0" class="flex flex-wrap gap-2 pt-3 border-t border-zinc-800/60">
             <span class="text-xs font-mono text-zinc-500 w-full mb-1">// Relevant Coursework:</span>
             <span

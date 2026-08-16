@@ -26,8 +26,6 @@ const toggleMobileMenu = () => {
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
 }
-
-// Dedicated function to smoothly scroll to the top of the page
 const scrollToTop = () => {
   closeMobileMenu()
   window.scrollTo({
@@ -48,8 +46,6 @@ const scrollToSection = (href: string) => {
 <template>
   <header class="fixed top-0 left-0 right-0 z-50 w-full border-b border-[#30363d] bg-[#0d1117]/80 backdrop-blur-md">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-      
-      <!-- Brand & Branch Indicator -->
       <div class="flex items-center gap-3 font-mono text-xs text-[#8b949e]">
         <a 
           href="#" 
@@ -63,11 +59,7 @@ const scrollToSection = (href: string) => {
           main
         </div>
       </div>
-
-      <!-- Navigation  -->
       <div class="flex items-center gap-4">
-
-        <!-- Desktop Links -->
         <nav class="hidden md:flex items-center gap-6 font-mono text-xs">
           <a
             v-for="link in navLinks"
@@ -95,8 +87,6 @@ const scrollToSection = (href: string) => {
         </button>
       </div>
     </div>
-
-    <!-- Mobile Drawer -->
     <div v-if="isMobileMenuOpen" class="border-b border-[#30363d] bg-[#0d1117] px-6 py-6 md:hidden font-mono">
       <div class="flex flex-col gap-4">
         <a

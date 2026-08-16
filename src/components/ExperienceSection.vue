@@ -53,7 +53,6 @@ const timeline = props.items && props.items.length > 0 ? props.items : defaultTi
 
 <template>
   <section id="experience" class="py-16 px-4 max-w-5xl mx-auto">
-    <!-- Section Header -->
     <div class="mb-12 text-center md:text-left">
       <h2 class="text-3xl font-bold tracking-tight text-white flex items-center gap-3 justify-center md:justify-start">
         <span class="font-mono text-emerald-400 text-xl">git log --graph</span>
@@ -63,26 +62,20 @@ const timeline = props.items && props.items.length > 0 ? props.items : defaultTi
         // Industrial commit history timeline
       </p>
     </div>
-
-    <!-- Git Commit-History Timeline Container -->
     <div class="relative pl-6 sm:pl-10 border-l-2 border-zinc-800 space-y-12">
       <div
         v-for="(item, index) in timeline"
         :key="item.id"
         class="relative group"
       >
-        <!-- Mechanical Git Commit Node / Node Pulse -->
         <div class="absolute -left-[31px] sm:-left-[47px] top-1 flex items-center justify-center">
           <span class="relative flex h-5 w-5 items-center justify-center">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-20 group-hover:opacity-60 transition-opacity"></span>
             <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-zinc-950 border-2 border-emerald-400 group-hover:bg-emerald-400 transition-colors duration-300"></span>
           </span>
         </div>
-
-        <!-- Timeline Card -->
         <div class="rounded-xl border border-zinc-800 bg-zinc-950/80 p-6 shadow-xl transition-all duration-300 hover:border-zinc-700 hover:shadow-2xl hover:shadow-emerald-500/5">
-          
-          <!-- Card Header Meta: Hash, Date, Type Tag -->
+        
           <div class="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-800/80 pb-3 mb-4 font-mono text-xs">
             <div class="flex items-center gap-3">
               <span class="text-emerald-400 font-semibold flex items-center gap-1">
@@ -102,8 +95,6 @@ const timeline = props.items && props.items.length > 0 ? props.items : defaultTi
               {{ item.type }}
             </span>
           </div>
-
-          <!-- Role & Organization -->
           <div class="space-y-1 mb-3">
             <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
               {{ item.role }}
@@ -112,21 +103,15 @@ const timeline = props.items && props.items.length > 0 ? props.items : defaultTi
               @ {{ item.organization }}
             </p>
           </div>
-
-          <!-- Description -->
           <p class="text-sm text-zinc-300 mb-4 leading-relaxed">
             {{ item.description }}
           </p>
-
-          <!-- Key Highlights Bullet List -->
           <ul class="space-y-1.5 mb-4 text-xs text-zinc-400 font-mono">
             <li v-for="(highlight, idx) in item.highlights" :key="idx" class="flex items-start gap-2">
               <span class="text-emerald-400 select-none">+</span>
               <span>{{ highlight }}</span>
             </li>
           </ul>
-
-          <!-- Tech Stack Tags (if applicable) -->
           <div v-if="item.techStack && item.techStack.length > 0" class="flex flex-wrap gap-2 pt-2 border-t border-zinc-800/60">
             <span
               v-for="tech in item.techStack"
