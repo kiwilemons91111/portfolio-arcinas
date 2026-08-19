@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
 const isMobileMenuOpen = ref(false)
-
 const props = defineProps<{
   isFxActive?: boolean
 }>()
-
 const emit = defineEmits<{
   (e: 'toggle-fx'): void
 }>()
-
 const navLinks = [
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
@@ -18,7 +14,6 @@ const navLinks = [
   { name: 'Education', href: '#education' },
   { name: 'Contact', href: '#contact' },
 ]
-
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
 }
@@ -33,7 +28,6 @@ const scrollToTop = () => {
     behavior: 'smooth'
   })
 }
-
 const scrollToSection = (href: string) => {
   closeMobileMenu()
   const targetElement = document.querySelector(href)
@@ -42,7 +36,6 @@ const scrollToSection = (href: string) => {
   }
 }
 </script>
-
 <template>
   <header class="fixed top-0 left-0 right-0 z-50 w-full border-b border-[#30363d] bg-[#0d1117]/80 backdrop-blur-md">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
@@ -71,8 +64,6 @@ const scrollToSection = (href: string) => {
             {{ link.name }}
           </a>
         </nav>
-
-        <!-- Mobile Drawer Toggle Button -->
         <button
           @click="toggleMobileMenu"
           type="button"

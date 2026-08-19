@@ -12,7 +12,6 @@ const systemBadges = computed(() => [
   ...portfolio.skills.architecture.slice(0, 2),
 ])
 </script>
-
 <template>
   <section class="relative text-[#c9d1d9]">
     <div
@@ -25,7 +24,6 @@ const systemBadges = computed(() => [
         background-size: 48px 48px;
       "
     />
-
     <div class="relative mx-auto max-w-6xl px-6 py-16 lg:py-24">
       <div
         class="mb-6 inline-flex items-center gap-2 border border-[#30363d] bg-[#161b22] px-3 py-1.5 font-mono text-xs text-[#8b949e]"
@@ -52,7 +50,6 @@ const systemBadges = computed(() => [
             <span class="text-[#484f58]">/</span>
             Ready for Contract
           </div>
-
           <div class="relative border border-[#30363d] bg-[#161b22]/80 p-5 pt-8 backdrop-blur-sm">
             <span
               class="pointer-events-none absolute -left-px -top-px z-10 font-mono text-sm leading-none text-[#58a6ff]"
@@ -78,20 +75,17 @@ const systemBadges = computed(() => [
             >
               +
             </span>
-
             <div class="relative overflow-hidden border border-[#30363d] bg-[#0d1117]">
               <img
                 :src="profileImage"
                 :alt="`${portfolio.personal.name} profile photo`"
                 class="aspect-square w-full object-cover object-[center_25%] grayscale-[15%] contrast-[1.05]"
               />
-
               <div
                 class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,transparent_62%,rgba(13,17,23,0.85)_100%)]"
                 aria-hidden="true"
               />
             </div>
-
             <div class="mt-4 border-t border-[#30363d] pt-4">
               <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-wider">
                 <span class="text-[#484f58]">frame::profile</span>
@@ -126,19 +120,15 @@ const systemBadges = computed(() => [
               VUE::TS
             </span>
           </div>
-
           <h1 class="mb-3 text-3xl font-semibold tracking-tight text-[#f0f6fc] sm:text-4xl lg:text-5xl">
             {{ portfolio.personal.name }}
           </h1>
-
           <p class="mb-5 font-mono text-sm text-emerald-400 sm:text-base">
             &gt; {{ portfolio.personal.title }}
           </p>
-
           <p class="mb-8 max-w-xl text-base leading-relaxed text-[#8b949e]">
             {{ portfolio.personal.summary }}
           </p>
-
           <div class="mb-8">
             <p class="mb-3 font-mono text-[10px] uppercase tracking-widest text-[#484f58]">
               // loaded_modules
@@ -153,7 +143,6 @@ const systemBadges = computed(() => [
               </span>
             </div>
           </div>
-
           <div class="mb-6 flex flex-wrap gap-3">
             <a
               :href="portfolio.personal.github"
@@ -181,13 +170,11 @@ const systemBadges = computed(() => [
               contact
             </a>
           </div>
-
           <p class="font-mono text-xs text-[#484f58]">
             <span class="text-[#8b949e]">loc:</span>
             {{ portfolio.personal.location }}
           </p>
         </div>
-
       </div>
     </div>
   </section>

@@ -50,7 +50,6 @@ const defaultTimelineItems: TimelineItem[] = [
 
 const timeline = props.items && props.items.length > 0 ? props.items : defaultTimelineItems
 </script>
-
 <template>
   <section id="experience" class="py-16 px-4 max-w-5xl mx-auto">
     <div class="mb-12 text-center md:text-left">
@@ -75,7 +74,6 @@ const timeline = props.items && props.items.length > 0 ? props.items : defaultTi
           </span>
         </div>
         <div class="rounded-xl border border-zinc-800 bg-zinc-950/80 p-6 shadow-xl transition-all duration-300 hover:border-zinc-700 hover:shadow-2xl hover:shadow-emerald-500/5">
-        
           <div class="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-800/80 pb-3 mb-4 font-mono text-xs">
             <div class="flex items-center gap-3">
               <span class="text-emerald-400 font-semibold flex items-center gap-1">
@@ -87,7 +85,6 @@ const timeline = props.items && props.items.length > 0 ? props.items : defaultTi
               <span class="text-zinc-500">|</span>
               <span class="text-zinc-400">{{ item.period }}</span>
             </div>
-
             <span
               :class="item.type === 'work' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' : 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30'"
               class="px-2.5 py-0.5 rounded-full border text-[11px] uppercase tracking-wider font-semibold select-none"
@@ -121,7 +118,6 @@ const timeline = props.items && props.items.length > 0 ? props.items : defaultTi
               [{{ tech }}]
             </span>
           </div>
-
         </div>
       </div>
     </div>
