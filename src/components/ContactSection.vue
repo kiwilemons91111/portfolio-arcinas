@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
 const email = 'rodelatboat@gmail.com'
 const phone = '+63 976 500 4461' 
 const copiedTarget = ref<string | null>(null)
-
 const copyToClipboard = (text: string, label: string) => {
   navigator.clipboard.writeText(text)
   copiedTarget.value = label
@@ -13,7 +11,6 @@ const copyToClipboard = (text: string, label: string) => {
   }, 2500)
 }
 </script>
-
 <template>
   <section id="contact" class="scroll-mt-20 bg-[#161b22] relative text-[#c9d1d9] py-16 sm:py-24 px-4 sm:px-6">
     <div class="mx-auto max-w-6xl">
@@ -76,15 +73,11 @@ const copyToClipboard = (text: string, label: string) => {
               </button>
             </div>
           </div>
-
-          <!-- Terminal Output Footer -->
           <div class="border-t border-[#30363d]/60 pt-4 text-[11px] text-[#484f58] flex justify-between items-center">
             <span>status: 200 OK</span>
             <span class="animate-pulse text-emerald-400">_ cursor active</span>
           </div>
-
         </div>
-
       </div>
     </div>
   </section>
